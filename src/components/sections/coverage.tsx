@@ -1,8 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { MapPin, Globe } from "lucide-react";
-import { internationalTerritories } from "@/lib/data";
+import Image from "next/image";
 
 export function Coverage() {
   return (
@@ -29,54 +28,17 @@ export function Coverage() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8, delay: 0.2 }}
-          className="mt-16"
+          className="mt-12"
         >
-          {/* Coverage grid with globe icon and locations */}
-          <div className="max-w-4xl mx-auto">
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-              {/* US Coverage */}
-              <div className="bg-white/5 backdrop-blur-sm rounded-2xl p-8 border border-white/10">
-                <div className="flex items-center gap-3 mb-6">
-                  <div className="w-10 h-10 rounded-lg bg-[var(--color-electric)] flex items-center justify-center">
-                    <MapPin className="h-5 w-5 text-white" />
-                  </div>
-                  <h3 className="text-xl font-bold">United States</h3>
-                </div>
-                <p className="text-slate-300 text-lg mb-4">
-                  All 50 States and Inhabited Territories
-                </p>
-                <div className="text-6xl font-bold text-[var(--color-electric)] opacity-30 mt-6">
-                  50 STATES
-                </div>
-              </div>
-
-              {/* International Coverage */}
-              <div className="bg-white/5 backdrop-blur-sm rounded-2xl p-8 border border-white/10">
-                <div className="flex items-center gap-3 mb-6">
-                  <div className="w-10 h-10 rounded-lg bg-[var(--color-electric)] flex items-center justify-center">
-                    <Globe className="h-5 w-5 text-white" />
-                  </div>
-                  <h3 className="text-xl font-bold">International</h3>
-                </div>
-                <div className="grid grid-cols-2 gap-3">
-                  {internationalTerritories.map((territory, i) => (
-                    <motion.div
-                      key={territory}
-                      initial={{ opacity: 0, y: 10 }}
-                      whileInView={{ opacity: 1, y: 0 }}
-                      viewport={{ once: true }}
-                      transition={{ duration: 0.4, delay: 0.3 + i * 0.08 }}
-                      className="flex items-center gap-3 bg-white/5 rounded-lg px-4 py-3 border border-white/5 hover:border-[var(--color-electric)]/30 transition-colors"
-                    >
-                      <div className="w-2 h-2 rounded-full bg-[var(--color-electric-light)] shrink-0" />
-                      <span className="text-slate-200 font-medium text-sm">
-                        {territory}
-                      </span>
-                    </motion.div>
-                  ))}
-                </div>
-              </div>
-            </div>
+          <div className="relative w-full rounded-2xl overflow-hidden shadow-2xl">
+            <Image
+              src="/images/coverage-map.png"
+              alt="BitCorp Locations — United States, Canada, Mexico, Latin America, United Kingdom, The Netherlands, China"
+              width={1500}
+              height={800}
+              className="w-full h-auto"
+              priority
+            />
           </div>
         </motion.div>
       </div>
