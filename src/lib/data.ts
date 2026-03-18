@@ -39,7 +39,7 @@ export const teamMembers = [
     title: "EVP of Networking",
     subtitle: "Business Development Officer, Co-Founder",
     email: "Sean@BitCorpInc.com",
-    image: "/images/team/sean-storrie.jpg",
+    image: "/images/team/sean-storrie.png",
   },
   {
     name: "Sean P. Feeney",

@@ -20,9 +20,9 @@ export function Logo({
   if (iconOnly) {
     return (
       <svg
-        width={height}
+        width={height * 1.15}
         height={height}
-        viewBox="0 0 100 100"
+        viewBox="0 0 115 100"
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
         className={className}
@@ -62,14 +62,14 @@ export function Logo({
         </linearGradient>
       </defs>
 
-      {/* Shield icon scaled to fit 80x80 area */}
-      <g transform="translate(0, 0) scale(0.8)">
+      {/* Shield icon scaled to fit */}
+      <g transform="translate(-2, 2) scale(0.75)">
         <ShieldIcon gradientId={gradientId} accentGradientId={accentGradientId} />
       </g>
 
       {/* BitCorp wordmark */}
       <text
-        x="88"
+        x="92"
         y="35"
         fontFamily="system-ui, -apple-system, sans-serif"
         fontWeight="700"
@@ -81,7 +81,7 @@ export function Logo({
         <tspan fill={`url(#${gradientId})`}>Corp</tspan>
       </text>
       <text
-        x="88"
+        x="92"
         y="55"
         fontFamily="system-ui, -apple-system, sans-serif"
         fontWeight="500"
@@ -104,87 +104,93 @@ function ShieldIcon({
 }) {
   return (
     <g>
-      {/* Outer shield — chevron notch on left, rounded right */}
+      {/* Outer shield — chevron notch on left, rounded right, horizontal badge */}
       <path
-        d="M8 10 L8 80 C8 90 14 95 22 95 L72 95 C85 95 92 88 92 75 L92 25 C92 12 85 5 72 5 L22 5 C14 5 8 10 8 20 Z"
-        fill={`url(#${gradientId})`}
-      />
-      {/* Chevron arrow notch cut into left side */}
-      <path
-        d="M0 50 L16 38 L16 20 C16 13 20 10 26 10 L72 10 C82 10 87 15 87 25 L87 75 C87 85 82 90 72 90 L26 90 C20 90 16 87 16 80 L16 62 Z"
+        d="M18 5
+           L90 5 C103 5 112 14 112 27
+           L112 73 C112 86 103 95 90 95
+           L18 95
+           C14 95 12 93 12 89
+           L12 62
+           L0 50
+           L12 38
+           L12 11
+           C12 7 14 5 18 5 Z"
         fill={`url(#${gradientId})`}
       />
 
-      {/* Inner shield border */}
+      {/* Inner shield border — same shape inset */}
       <path
-        d="M22 18 L72 18 C78 18 82 22 82 28 L82 72 C82 78 78 82 72 82 L22 82 C18 82 22 78 22 72 Z"
+        d="M24 13
+           L86 13 C95 13 102 20 102 29
+           L102 71 C102 80 95 87 86 87
+           L24 87
+           C22 87 20 85 20 83
+           L20 62
+           L10 50
+           L20 38
+           L20 17
+           C20 15 22 13 24 13 Z"
         fill="white"
         fillOpacity="0.08"
-      />
-      <path
-        d="M24 20 L70 20 C76 20 80 24 80 30 L80 70 C80 76 76 80 70 80 L24 80 C20 80 24 76 24 70 Z"
-        fill="none"
         stroke="white"
-        strokeWidth="1.5"
-        strokeOpacity="0.2"
+        strokeWidth="1.2"
+        strokeOpacity="0.18"
       />
 
-      {/* B letter — bold, corporate */}
+      {/* B letter — bold, blocky, corporate */}
       <path
-        d="M28 34 L28 66 L42 66 C47 66 50.5 63 50.5 59 C50.5 55.5 48.5 53 45.5 52 C47.8 51 49.5 48.5 49.5 46 C49.5 42 46 39 42 39 L38 39 L28 39 Z
-           M35 43 L41 43 C43.5 43 45 44.5 45 46.5 C45 48.5 43.5 50 41 50 L35 50 Z
-           M35 54 L42 54 C44.8 54 46.5 55.8 46.5 58 C46.5 60.2 44.8 62 42 62 L35 62 Z"
+        d="M28 35 L28 65
+           L40 65 C44.5 65 47.5 62.5 47.5 59
+           C47.5 56 45.5 54 43 53
+           C45 52 46.5 49.5 46.5 47
+           C46.5 43.5 43.5 41 40 41
+           L28 41 Z
+           M34 44 L39 44
+           C41 44 42.5 45.5 42.5 47
+           C42.5 48.5 41 50 39 50
+           L34 50 Z
+           M34 53 L40 53
+           C42.2 53 43.5 54.8 43.5 56.5
+           C43.5 58.5 42 60 40 60
+           L34 60 Z"
         fill="white"
         fillRule="evenodd"
       />
 
-      {/* C letter with circular acceleration arrow */}
-      <g transform="translate(54, 38)">
-        {/* C letter */}
+      {/* C letter — the C itself is the main blue arc */}
+      <g transform="translate(55, 34)">
+        {/* C body — opens on the right */}
         <path
-          d="M18 0 C8 0 0 7 0 16 C0 25 8 32 18 32 C23 32 27.5 30 30.5 26.5"
+          d="M22 2
+             C14 -1 5 2 2 10
+             C-2 18 0 27 6 32
+             C12 37 21 36 27 31"
           fill="none"
           stroke={`url(#${accentGradientId})`}
-          strokeWidth="5"
+          strokeWidth="5.5"
           strokeLinecap="round"
         />
-        {/* Circular arrow — upper arc going clockwise */}
+        {/* Arrow arc — continues from the bottom-right of C, sweeps up and over the top */}
         <path
-          d="M32 8 C28 2 23 -1 17 -1 C7 -1 -1 7 -1 16"
+          d="M27 31
+             C32 27 35 21 35 15
+             C35 8 31 2 25 -1"
           fill="none"
           stroke="white"
-          strokeWidth="2.5"
+          strokeWidth="3"
           strokeLinecap="round"
-          strokeOpacity="0.5"
+          strokeOpacity="0.7"
         />
-        {/* Arrow head pointing right/up */}
+        {/* Arrowhead at top — pointing upward */}
         <path
-          d="M29 2 L33 8 L26 9"
+          d="M28 -6 L24 0 L18 -3"
           fill="none"
           stroke="white"
-          strokeWidth="2.5"
+          strokeWidth="3"
           strokeLinecap="round"
           strokeLinejoin="round"
-          strokeOpacity="0.6"
-        />
-        {/* Lower circular arrow going counter-clockwise */}
-        <path
-          d="M2 25 C6 31 12 34 18 34 C28 34 35 26 35 17"
-          fill="none"
-          stroke="white"
-          strokeWidth="2.5"
-          strokeLinecap="round"
-          strokeOpacity="0.5"
-        />
-        {/* Arrow head pointing left/down */}
-        <path
-          d="M5 31 L1 25 L8 24"
-          fill="none"
-          stroke="white"
-          strokeWidth="2.5"
-          strokeLinecap="round"
-          strokeLinejoin="round"
-          strokeOpacity="0.6"
+          strokeOpacity="0.85"
         />
       </g>
     </g>
