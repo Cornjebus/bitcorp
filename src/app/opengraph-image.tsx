@@ -42,32 +42,22 @@ export default function OGImage() {
             zIndex: 1,
           }}
         >
-          {/* Horizontal badge shield with chevron notch + B + C with upward arrow */}
-          <svg
-            width="180"
-            height="156"
-            viewBox="0 0 115 100"
-            fill="none"
-          >
+          {/* Clean shield with BC */}
+          <svg width="140" height="168" viewBox="0 0 100 120" fill="none">
             <defs>
-              <linearGradient id="og-grad" x1="0" y1="0" x2="1" y2="1">
-                <stop offset="0%" stopColor="#1a2744" />
-                <stop offset="100%" stopColor="#2563eb" />
+              <linearGradient id="og-grad" x1="0" y1="0" x2="0.5" y2="1">
+                <stop offset="0%" stopColor="#2563eb" />
+                <stop offset="100%" stopColor="#1a2744" />
               </linearGradient>
               <linearGradient id="og-accent" x1="0" y1="0" x2="1" y2="1">
                 <stop offset="0%" stopColor="#3b82f6" />
                 <stop offset="100%" stopColor="#60a5fa" />
               </linearGradient>
             </defs>
-            <rect width="115" height="100" fill="#1a2744" />
-            <path d="M18 5 L90 5 C103 5 112 14 112 27 L112 73 C112 86 103 95 90 95 L18 95 C14 95 12 93 12 89 L12 62 L0 50 L12 38 L12 11 C12 7 14 5 18 5 Z" fill="url(#og-grad)" />
-            <path d="M24 13 L86 13 C95 13 102 20 102 29 L102 71 C102 80 95 87 86 87 L24 87 C22 87 20 85 20 83 L20 62 L10 50 L20 38 L20 17 C20 15 22 13 24 13 Z" fill="white" fillOpacity="0.08" stroke="white" strokeWidth="1.2" strokeOpacity="0.18" />
-            <path d="M28 35 L28 65 L40 65 C44.5 65 47.5 62.5 47.5 59 C47.5 56 45.5 54 43 53 C45 52 46.5 49.5 46.5 47 C46.5 43.5 43.5 41 40 41 L28 41 Z M34 44 L39 44 C41 44 42.5 45.5 42.5 47 C42.5 48.5 41 50 39 50 L34 50 Z M34 53 L40 53 C42.2 53 43.5 54.8 43.5 56.5 C43.5 58.5 42 60 40 60 L34 60 Z" fill="white" fillRule="evenodd" />
-            <g transform="translate(55,34)">
-              <path d="M22 2 C14 -1 5 2 2 10 C-2 18 0 27 6 32 C12 37 21 36 27 31" fill="none" stroke="url(#og-accent)" strokeWidth="5.5" strokeLinecap="round" />
-              <path d="M27 31 C32 27 35 21 35 15 C35 8 31 2 25 -1" fill="none" stroke="white" strokeWidth="3" strokeLinecap="round" strokeOpacity="0.7" />
-              <path d="M28 -6 L24 0 L18 -3" fill="none" stroke="white" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" strokeOpacity="0.85" />
-            </g>
+            <path d="M50 2 L92 16 C96 17.5 98 21 98 25 L98 55 C98 75 78 95 50 115 C22 95 2 75 2 55 L2 25 C2 21 4 17.5 8 16 Z" fill="url(#og-grad)" />
+            <path d="M50 10 L86 22 C88 23 90 25.5 90 28 L90 54 C90 70 74 87 50 105 C26 87 10 70 10 54 L10 28 C10 25.5 12 23 14 22 Z" fill="white" fillOpacity="0.07" stroke="white" strokeWidth="1" strokeOpacity="0.2" />
+            <path d="M24 40 L24 80 L40 80 C46 80 50 76.5 50 72 C50 68 47.5 65.5 44 64.5 C46.5 63.5 48.5 60.5 48.5 57.5 C48.5 53 45 50 40 50 L24 50 Z M32 54 L39 54 C41.5 54 43 55.5 43 57.5 C43 59.5 41.5 61 39 61 L32 61 Z M32 65 L40 65 C43 65 44.5 67 44.5 69.5 C44.5 72 43 74 40 74 L32 74 Z" fill="white" fillRule="evenodd" />
+            <path d="M72 54 C68 50.5 63 49 58 50 C51 52 47 58 48 65 C49 72 54 77.5 61 78 C66 78.5 70.5 76 74 72" fill="none" stroke="url(#og-accent)" strokeWidth="6" strokeLinecap="round" />
           </svg>
 
           <div

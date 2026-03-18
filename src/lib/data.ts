@@ -41,22 +41,6 @@ export const teamMembers = [
     email: "Sean@BitCorpInc.com",
     image: "/images/team/sean-storrie.png",
   },
-  {
-    name: "Sean P. Feeney",
-    title: "General Counsel",
-    subtitle: "Hamel, Waxler, Allen & Collins",
-    email: null,
-    image: "/images/team/sean-feeney.jpg",
-    address: "395 Smith Street, Providence, RI 02908",
-  },
-  {
-    name: "Brian D. Wassel",
-    title: "CPA",
-    subtitle: "Trout CPA",
-    email: null,
-    image: "/images/team/brian-wassel.jpg",
-    address: "1705 Oregon Pike, Lancaster, PA 17601",
-  },
 ];
 
 export const accessItems = [

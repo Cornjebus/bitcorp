@@ -2,7 +2,7 @@
 
 import { motion } from "framer-motion";
 import Image from "next/image";
-import { Mail, MapPin } from "lucide-react";
+import { Mail } from "lucide-react";
 import { teamMembers } from "@/lib/data";
 
 export function Team() {
@@ -25,7 +25,7 @@ export function Team() {
           </p>
         </motion.div>
 
-        <div className="mt-16 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="mt-16 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
           {teamMembers.map((member, i) => (
             <motion.div
               key={member.name}
@@ -62,15 +62,38 @@ export function Team() {
                   {member.email}
                 </a>
               )}
-              {"address" in member && member.address && (
-                <p className="flex items-start gap-1.5 justify-center mt-2 text-xs text-[var(--color-slate-text)]">
-                  <MapPin className="h-3.5 w-3.5 mt-0.5 shrink-0" />
-                  {member.address}
-                </p>
-              )}
             </motion.div>
           ))}
         </div>
+
+        {/* Partners */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+          className="mt-16 text-center"
+        >
+          <h3 className="text-xl font-semibold text-[var(--color-navy)] mb-8">
+            Our Partners
+          </h3>
+          <div className="flex justify-center">
+            <a
+              href="https://www.troutcpa.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="bg-white rounded-2xl border border-border p-8 hover:shadow-lg transition-all hover:border-[var(--color-electric)]/20 inline-block"
+            >
+              <Image
+                src="/images/trout-cpa-logo.png"
+                alt="Trout CPA — Accounting | Tax | Advisory"
+                width={240}
+                height={100}
+                className="object-contain"
+              />
+            </a>
+          </div>
+        </motion.div>
       </div>
     </section>
   );
