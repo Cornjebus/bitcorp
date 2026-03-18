@@ -1,8 +1,8 @@
 "use client";
 
 import { motion } from "framer-motion";
+import Image from "next/image";
 import { Button } from "@/components/ui/button";
-import { Logo } from "@/components/logo";
 import { ArrowDown } from "lucide-react";
 
 export function Hero() {
@@ -17,7 +17,14 @@ export function Hero() {
           transition={{ duration: 0.6 }}
           className="flex justify-center mb-8"
         >
-          <Logo variant="light" iconOnly width={80} height={80} />
+          <Image
+            src="/images/bitcorp-shield.png"
+            alt="BitCorp Shield"
+            width={80}
+            height={90}
+            className="h-20 w-auto drop-shadow-lg"
+            priority
+          />
         </motion.div>
 
         <motion.div
