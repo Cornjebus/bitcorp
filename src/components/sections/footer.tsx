@@ -13,7 +13,7 @@ export function Footer() {
                 alt="BitCorp"
                 width={32}
                 height={36}
-                className="h-9 w-auto brightness-0 invert opacity-90"
+                className="h-9 w-auto"
               />
               <div className="flex flex-col leading-tight">
                 <span className="text-lg font-bold text-white">
