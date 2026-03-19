@@ -7,13 +7,23 @@ export function Footer() {
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="flex flex-col md:flex-row justify-between items-center gap-8">
           <div className="flex flex-col items-center md:items-start gap-3">
-            <Image
-              src="/images/bitcorp-shield.png"
-              alt="BitCorp"
-              width={32}
-              height={36}
-              className="h-9 w-auto brightness-0 invert opacity-90"
-            />
+            <div className="flex items-center gap-2">
+              <Image
+                src="/images/bitcorp-shield.png"
+                alt="BitCorp"
+                width={32}
+                height={36}
+                className="h-9 w-auto brightness-0 invert opacity-90"
+              />
+              <div className="flex flex-col leading-tight">
+                <span className="text-lg font-bold text-white">
+                  Bit<span className="text-[var(--color-electric-light)]">Corp</span>
+                </span>
+                <span className="text-[8px] font-medium tracking-[2px] text-slate-400 uppercase">
+                  Business Accelerator
+                </span>
+              </div>
+            </div>
             <p className="text-sm text-slate-400">
               6 S. Broad Street, Lititz, PA 17543
             </p>
