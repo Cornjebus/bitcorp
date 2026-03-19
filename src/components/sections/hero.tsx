@@ -18,11 +18,11 @@ export function Hero() {
           className="flex justify-center mb-8"
         >
           <Image
-            src="/images/bitcorp-shield.png"
-            alt="BitCorp Shield"
-            width={80}
-            height={90}
-            className="h-20 w-auto drop-shadow-lg"
+            src="/images/bitcorp-logo-full.png"
+            alt="BitCorp — Business Accelerator"
+            width={240}
+            height={160}
+            className="h-40 w-auto drop-shadow-lg"
             priority
           />
         </motion.div>
